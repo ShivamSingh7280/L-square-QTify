@@ -1,0 +1,17 @@
+.button {
+	color: var(--color-primary);
+	text-align: center;
+	font-feature-settings: "clig" off, "liga" off;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	letter-spacing: 0.25px;
+	display: inline-flex;
+	padding: 10px 16px;
+	align-items: flex-start;
+	gap: 10px;
+	border-radius: 12px;
+	border: 1px solid var(--color-primary);
+	background: var(--color-black);
+}

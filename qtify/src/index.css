@@ -1,6 +1,8 @@
 :root {
 	/* Global variables to be defined here */
-	/* --color-white: #ffffff; */
+	--color-primary: #34c94b;
+	--color-black: #121212;
+	--color-white: #ffffff;
 }
 
 *,
@@ -8,17 +10,25 @@
 *::after {
 	box-sizing: border-box;
 }
+
 * {
 	margin: 0;
 }
+
 html,
 body {
 	height: 100%;
 }
+
 body {
 	line-height: 1.5;
+	font-family: "Poppins", sans-serif;
 	-webkit-font-smoothing: antialiased;
+	background-color: var(--color-black);
+	color: var(--color-white);
+	overflow-x: hidden;
 }
+
 img,
 picture,
 video,
@@ -27,12 +37,14 @@ svg {
 	display: block;
 	max-width: 100%;
 }
+
 input,
 button,
 textarea,
 select {
 	font: inherit;
 }
+
 p,
 h1,
 h2,
@@ -42,6 +54,7 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
 #root,
 #__next {
 	isolation: isolate;
