@@ -1,0 +1,37 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 270px;
+}
+
+.heroImageWrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 799px;
+	height: 212px;
+}
+
+.banner {
+	display: flex;
+	flex-direction: column;
+	color: var(--color-white);
+	width: 605px;
+	height: 100px;
+}
+
+.banner span {
+	margin: 10px;
+	width: 100%;
+}
+
+.banner span:first-child {
+	display: flex;
+	justify-content: center;
+}
+
+.banner span:last-child {
+	margin-left: 20px;
+}
