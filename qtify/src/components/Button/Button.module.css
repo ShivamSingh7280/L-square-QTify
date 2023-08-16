@@ -2,16 +2,37 @@
 	color: var(--color-primary);
 	text-align: center;
 	font-feature-settings: "clig" off, "liga" off;
-	font-size: 18px;
+	font-size: 1.125rem; /* 18px converted to rem */
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
 	letter-spacing: 0.25px;
 	display: inline-flex;
-	padding: 10px 16px;
+	padding: 0.625rem 1rem; /* 10px 16px converted to rem */
 	align-items: flex-start;
-	gap: 10px;
-	border-radius: 12px;
-	border: 1px solid var(--color-primary);
+	gap: 0.625rem; /* 10px converted to rem */
+	border-radius: 0.75rem; /* 12px converted to rem */
+	border: 0.0625rem solid var(--color-primary); /* 1px converted to rem */
 	background: var(--color-black);
+	margin-left: 10px;
+}
+
+/* Media Queries for Small Devices */
+@media (max-width: 480px) {
+	.button {
+		font-size: 1rem; /* Adjust font size for small devices */
+		padding: 0.5rem 0.75rem; /* Adjust padding for small devices */
+		gap: 0.5rem; /* Adjust gap for small devices */
+		border-radius: 0.5rem; /* Adjust border radius for small devices */
+	}
+}
+
+/* Media Queries for Medium Devices */
+@media (min-width: 481px) and (max-width: 768px) {
+	.button {
+		font-size: 1.25rem; /* Adjust font size for medium devices */
+		padding: 0.75rem 1.25rem; /* Adjust padding for medium devices */
+		gap: 0.75rem; /* Adjust gap for medium devices */
+		border-radius: 0.875rem; /* Adjust border radius for medium devices */
+	}
 }

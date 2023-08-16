@@ -1,9 +1,35 @@
 .navbar {
 	background-color: var(--color-primary);
-	width: 100vw;
-	height: 74px;
+	width: 100%;
+	height: 4.9333rem; /* 74px converted to rem */
 	display: flex;
-	padding: 0px 32px;
+	padding: 0 2rem; /* 0px 32px converted to rem */
 	align-items: center;
 	justify-content: space-between;
+}
+
+/* Small devices */
+@media (max-width: 30rem) {
+	/* 480px converted to rem */
+	.navbar {
+		height: auto;
+		padding: 1rem; /* 16px converted to rem */
+		text-align: center;
+	}
+}
+
+/* Medium devices */
+@media (min-width: 30.0625rem) and (max-width: 64rem) {
+	/* 481px and 1024px converted to rem */
+	.navbar {
+		padding: 1.25rem; /* 20px converted to rem */
+	}
+}
+
+/* Large devices */
+@media (min-width: 64.0625rem) {
+	/* 1025px converted to rem */
+	.navbar {
+		padding: 2rem; /* 32px converted to rem */
+	}
 }
