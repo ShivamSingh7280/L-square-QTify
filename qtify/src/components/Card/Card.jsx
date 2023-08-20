@@ -34,6 +34,7 @@ const Card = ({ data, type }) => {
 						</div>
 					</Tooltip>
 				);
+
 			default:
 				return null; // Return null if type doesn't match "album"
 		}
