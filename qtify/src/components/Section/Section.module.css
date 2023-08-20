@@ -1,7 +1,3 @@
-.sectionWrapper {
-	margin: 15px;
-}
-
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -14,7 +10,7 @@
 
 .wrapper {
 	display: flex;
-	gap: 29px;
+	gap: 25px;
 	flex-wrap: wrap;
 }
 
