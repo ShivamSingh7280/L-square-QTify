@@ -3,11 +3,6 @@ import { Tooltip, Chip } from "@mui/material";
 import styles from "./Card.module.css";
 
 const Card = ({ data, type }) => {
-	// Ensuring that data is defined and contains the expected properties.
-	if (!data || !data.image || !data.follows || !data.title || !data.songs) {
-		return null; // Return null if data is missing or incomplete.
-	}
-
 	const getCard = (type) => {
 		switch (type) {
 			case "album":
@@ -35,8 +30,24 @@ const Card = ({ data, type }) => {
 					</Tooltip>
 				);
 
+			case "songs":
+				return (
+					<div className={styles.wrapper}>
+						<div className={styles.card}>
+							<img src={data.image} alt="song" loading="lazy" />
+							<div className={styles.banner}>
+								<div className={styles.pill}>
+									<p>{data.likes} Likes</p>
+								</div>
+							</div>
+						</div>
+						<div className={styles.titleWrapper}>
+							<p>{data.title}</p>
+						</div>
+					</div>
+				);
 			default:
-				return null; // Return null if type doesn't match "album"
+				return <></>;
 		}
 	};
 

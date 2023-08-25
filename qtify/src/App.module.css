@@ -4,3 +4,10 @@
 	flex-direction: column;
 	gap: 32px;
 }
+
+.tabsTitle {
+	margin-left: 15px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	color: var(--color-primary);
+}
