@@ -6,6 +6,7 @@ import { useState } from "react";
 import Section from "./components/Section/Section";
 import styles from "./App.module.css";
 import FilterTabs from "./components/FilterTabs/FilterTabs";
+import CustomAccordion from "./components/Accordion/CustomAccordion";
 
 function App() {
 	const [topAlbumData, setTopAlbumData] = useState([]);
@@ -45,8 +46,12 @@ function App() {
 			<div>
 				<h3 className={styles.tabsTitle}>Songs</h3>
 			</div>
-
 			<FilterTabs data={allSongsData} />
+			<hr></hr>
+			<div className={styles.customAccordionWrapper}>
+				<h1 className={styles.accordionHeader}>FAQs</h1>
+				<CustomAccordion />
+			</div>
 		</>
 	);
 }

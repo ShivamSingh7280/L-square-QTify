@@ -1,0 +1,52 @@
+.wrapper {
+	margin-bottom: 15px;
+	border: 1px solid var(--color-white);
+	border-radius: 10px;
+}
+
+.accordionHeader {
+	width: 1135px;
+	height: 78px;
+	flex-shrink: 0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 1px solid var(--color-white);
+	background: var(--color-black);
+	display: flex;
+	justify-content: space-between;
+	color: var(--color-white);
+	padding: 8px 16px;
+}
+
+.accordionText {
+	color: var(--color-black);
+	font-family: Poppins;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-align: start;
+	margin-right: 16px;
+}
+
+.accordionDescription {
+	color: #121212;
+	font-family: Poppins;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-align: left;
+}
+
+.arrow {
+	color: var(--primary-400, var(--color-primary));
+	text-align: right;
+	font-family: Font Awesome 6 Pro;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: normal;
+	text-align: right;
+	margin-left: auto;
+}
