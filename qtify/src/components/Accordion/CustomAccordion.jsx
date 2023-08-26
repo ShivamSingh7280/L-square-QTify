@@ -15,7 +15,7 @@ const CustomAccordion = () => {
 	};
 
 	return (
-		<div>
+		<div className={styles.accordionContainer}>
 			<Accordion
 				expanded={expanded === "panel1"}
 				onChange={handleAccordionChange("panel1")}
@@ -37,6 +37,7 @@ const CustomAccordion = () => {
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
+
 			<Accordion
 				expanded={expanded === "panel2"}
 				onChange={handleAccordionChange("panel2")}

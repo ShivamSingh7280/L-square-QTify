@@ -4,8 +4,9 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Section from "../Section/Section";
 import styles from "./FilterTabs.module.css";
+import { allSongsTabs } from "../../config/helper-config";
 
-const FilterTabs = ({ data }) => {
+const FilterTabs = ({ data, loadingState }) => {
 	const [value, setValue] = useState(0);
 
 	const _handleTabs = (e, val) => {
@@ -32,38 +33,24 @@ const FilterTabs = ({ data }) => {
 			<Box sx={{ width: "100%" }}>
 				<Box sx={{ borderBottom: 1, borderColor: "divider" }}>
 					<Tabs value={value} onChange={_handleTabs} aria-label="basic tabs">
-						<Tab label="All" />
-						<Tab label="Rock" />
-						<Tab label="Pop" />
-						<Tab label="Jazz" />
-						<Tab label="Blues" />
+						{allSongsTabs.map((each) => (
+							<Tab label={each} key={each} />
+						))}
 					</Tabs>
 				</Box>
-				<TabPanel value={value} index={0}>
-					<div className={styles.filterSectionWrapper}>
-						<Section data={filteredData(0)} type="songs" header="all" />
-					</div>
-				</TabPanel>
-				<TabPanel value={value} index={1}>
-					<div className={styles.filterSectionWrapper}>
-						<Section data={filteredData(1)} type="songs" header="filterAll" />
-					</div>
-				</TabPanel>
-				<TabPanel value={value} index={2}>
-					<div className={styles.filterSectionWrapper}>
-						<Section data={filteredData(2)} type="songs" header="filterAll" />
-					</div>
-				</TabPanel>
-				<TabPanel value={value} index={3}>
-					<div className={styles.filterSectionWrapper}>
-						<Section data={filteredData(3)} type="songs" header="filterAll" />
-					</div>
-				</TabPanel>
-				<TabPanel value={value} index={4}>
-					<div className={styles.filterSectionWrapper}>
-						<Section data={filteredData(4)} type="songs" header="filterAll" />
-					</div>
-				</TabPanel>
+
+				{allSongsTabs.map((_, index) => (
+					<TabPanel key={index} value={value} index={index}>
+						<div className={styles.filterSectionWrapper}>
+							<Section
+								data={filteredData(index)}
+								type="songs"
+								header={index ? "filterAll" : "all"}
+								loadingState={loadingState}
+							/>
+						</div>
+					</TabPanel>
+				))}
 			</Box>
 		</div>
 	);

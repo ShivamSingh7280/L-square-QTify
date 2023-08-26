@@ -1,0 +1,51 @@
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	align-items: center;
+}
+
+.imgTextWrapper {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.thumbnailWrapper {
+	width: 66px;
+	height: 71px;
+	flex-shrink: 0;
+	border-radius: 10px;
+	border: 5px solid #1d1d1d;
+	background: lightgray 50% / cover no-repeat;
+	object-fit: contain;
+	overflow: hidden;
+}
+
+.imgTextWrapper h5 {
+	color: var(--color-white);
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.textWrapper p {
+	color: #d8d8d8;
+	font-family: Poppins;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.followWrapper h5 {
+	color: var(--color-white);
+	text-align: right;
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import NavBar from "./components/NavBar/NavBar";
 import HeroSection from "./components/HeroSection/HeroSection";
 import { fetchTopAlbums, fetchNewAlbums, fetchAllSongs } from "./api/api";
@@ -12,20 +13,56 @@ function App() {
 	const [topAlbumData, setTopAlbumData] = useState([]);
 	const [newAlbumData, setNewAlbumData] = useState([]);
 	const [allSongsData, setAllSongsData] = useState([]);
+	const [loadingState, setLoadingState] = useState({
+		topAlbum: true,
+		newAlbum: true,
+		allSongs: true,
+	});
+
+	const _manageLoadingState = (key = "", value = false) => {
+		setLoadingState((prev) => ({ ...prev, [key]: value }));
+	};
 
 	const generateTopAlbumData = async () => {
-		const data = await fetchTopAlbums();
-		setTopAlbumData(data);
+		try {
+			_manageLoadingState("topAlbum", true);
+
+			const data = await fetchTopAlbums();
+			setTopAlbumData(data);
+
+			_manageLoadingState("topAlbum", false);
+		} catch (error) {
+			_manageLoadingState("topAlbum", false);
+			console.log(error);
+		}
 	};
 
 	const generateNewAlbumData = async () => {
-		const data = await fetchNewAlbums();
-		setNewAlbumData(data);
+		try {
+			_manageLoadingState("newAlbum", true);
+
+			const data = await fetchNewAlbums();
+			setNewAlbumData(data);
+
+			_manageLoadingState("newAlbum", false);
+		} catch (error) {
+			_manageLoadingState("newAlbum", false);
+			console.log(error);
+		}
 	};
 
 	const generateAllSongsData = async () => {
-		const data = await fetchAllSongs();
-		setAllSongsData(data);
+		try {
+			_manageLoadingState("allSongs", true);
+
+			const data = await fetchAllSongs();
+			setAllSongsData(data);
+
+			_manageLoadingState("allSongs", false);
+		} catch (err) {
+			_manageLoadingState("allSongs", false);
+			console.log(err);
+		}
 	};
 
 	useEffect(() => {
@@ -36,17 +73,27 @@ function App() {
 
 	return (
 		<>
-			<NavBar />
+			<NavBar data={topAlbumData} />
 			<HeroSection />
 			<div className={styles.sectionWrapper}>
-				<Section title="Top Albums" data={topAlbumData} type="album" />
-				<Section title="New Albums" data={newAlbumData} type="album" />
+				<Section
+					title="Top Albums"
+					data={topAlbumData}
+					type="album"
+					loadingState={loadingState.topAlbum}
+				/>
+				<Section
+					title="New Albums"
+					data={newAlbumData}
+					type="album"
+					loadingState={loadingState.newAlbum}
+				/>
 			</div>
 			<hr></hr>
 			<div>
 				<h3 className={styles.tabsTitle}>Songs</h3>
 			</div>
-			<FilterTabs data={allSongsData} />
+			<FilterTabs data={allSongsData} loadingState={loadingState.allSongs} />
 			<hr></hr>
 			<div className={styles.customAccordionWrapper}>
 				<h1 className={styles.accordionHeader}>FAQs</h1>

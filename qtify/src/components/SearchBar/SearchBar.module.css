@@ -34,3 +34,7 @@
 		width: 100%; /* Adjust width to 100% on smaller screens */
 	}
 }
+
+.dropdownWrapper {
+	position: absolute;
+}
