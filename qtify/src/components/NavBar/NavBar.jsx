@@ -3,12 +3,19 @@ import Logo from "../Logo/Logo";
 import styles from "./NavBar.module.css";
 import SearchBar from "../SearchBar/SearchBar";
 import Button from "../Button/Button";
-import FeedBack from "../FeedBack/FeedBack";
+import FeedBackModal from "../Modals/FeedBackModal/FeedBackModal";
+import { showToast } from "../../config/helper-methods";
 
 const NavBar = ({ data }) => {
-	const [feedback, setFeedBack] = useState(false);
-	const _handleClick = () => {
-		setFeedBack(!feedback);
+	const [isFeedBackModalOpen, setIsFeedBackModalOpen] = useState(false);
+
+	const _toggleFeedBackModal = (value = false) => {
+		setIsFeedBackModalOpen(value);
+	};
+
+	const _onSuccess = () => {
+		// show toast
+		showToast("Feedback Submitted", "success");
 	};
 
 	return (
@@ -16,10 +23,16 @@ const NavBar = ({ data }) => {
 			<nav className={styles.navbar}>
 				<Logo />
 				<SearchBar placeholder="Search a album of your choice" data={data} />
-				<Button btnText="Give Feedback" onClickHandler={_handleClick} />
+				<Button
+					btnText="Give Feedback"
+					onClickHandler={() => _toggleFeedBackModal(true)}
+				/>
 			</nav>
-
-			{feedback ? <FeedBack open={feedback} /> : <></>}
+			<FeedBackModal
+				isOpen={isFeedBackModalOpen}
+				onSuccess={_onSuccess}
+				onDismiss={_toggleFeedBackModal}
+			/>
 		</>
 	);
 };

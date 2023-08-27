@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import NavBar from "./components/NavBar/NavBar";
 import HeroSection from "./components/HeroSection/HeroSection";
 import { fetchTopAlbums, fetchNewAlbums, fetchAllSongs } from "./api/api";
@@ -8,7 +7,8 @@ import Section from "./components/Section/Section";
 import styles from "./App.module.css";
 import FilterTabs from "./components/FilterTabs/FilterTabs";
 import CustomAccordion from "./components/Accordion/CustomAccordion";
-import SearchBar from "./components/SearchBar/SearchBar";
+import { Toaster } from "react-hot-toast";
+import { errorHandler } from "./config/helper-methods";
 
 function App() {
 	const [topAlbumData, setTopAlbumData] = useState([]);
@@ -33,7 +33,7 @@ function App() {
 			_manageLoadingState("topAlbum", false);
 		} catch (error) {
 			_manageLoadingState("topAlbum", false);
-			console.log(error);
+			errorHandler(error);
 		}
 	};
 
@@ -47,7 +47,7 @@ function App() {
 			_manageLoadingState("newAlbum", false);
 		} catch (error) {
 			_manageLoadingState("newAlbum", false);
-			console.log(error);
+			errorHandler(error);
 		}
 	};
 
@@ -59,9 +59,9 @@ function App() {
 			setAllSongsData(data);
 
 			_manageLoadingState("allSongs", false);
-		} catch (err) {
+		} catch (error) {
 			_manageLoadingState("allSongs", false);
-			console.log(err);
+			errorHandler(error);
 		}
 	};
 
@@ -69,11 +69,16 @@ function App() {
 		generateTopAlbumData();
 		generateNewAlbumData();
 		generateAllSongsData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	const dropdownData = topAlbumData?.concat(newAlbumData);
 
 	return (
 		<>
-			<NavBar data={topAlbumData} />
+			<Toaster position="bottom-right" reverseOrder={false} />
+			<NavBar data={dropdownData} />
+
 			<HeroSection />
 			<div className={styles.sectionWrapper}>
 				<Section
@@ -90,13 +95,13 @@ function App() {
 				/>
 			</div>
 			<hr className={styles.line}></hr>
+
 			<div>
 				<h3 className={styles.tabsTitle}>Songs</h3>
 			</div>
+
 			<FilterTabs data={allSongsData} loadingState={loadingState.allSongs} />
-
 			<hr className={styles.line}></hr>
-
 			<div className={styles.customAccordionWrapper}>
 				<h1 className={styles.accordionHeader}>FAQs</h1>
 				<CustomAccordion />

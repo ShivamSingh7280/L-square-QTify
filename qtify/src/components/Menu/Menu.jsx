@@ -3,13 +3,12 @@ import styles from "./Menu.module.css";
 import MenuItem from "../MenuItem/MenuItem";
 
 const Menu = ({ albums }) => {
-	console.log("album", albums);
 	return (
 		<>
 			<div className={styles.wrapper}>
 				{albums?.length
 					? albums.map((item) => (
-							<div className={styles.menuItemWrapper}>
+							<div className={styles.menuItemWrapper} key={item.id}>
 								<MenuItem
 									image={item.image}
 									albumName={item.title}
