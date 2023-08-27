@@ -1,5 +1,6 @@
 .accordionContainer {
 	width: 80%;
+	border-radius: 10px;
 }
 
 .wrapper {
@@ -7,7 +8,6 @@
 	border: 1px solid var(--color-white);
 	border-radius: 10px;
 	object-fit: contain;
-	/* overflow: hidden; */
 }
 
 .accordionHeader {
@@ -15,18 +15,15 @@
 	height: 78px;
 	margin: 20px;
 	flex-shrink: 0;
-	/* border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px; */
-	border: 1px solid var(--color-white);
-	background: var(--color-black);
+	border: 1px solid var(--color-black);
 	display: flex;
 	justify-content: space-between;
-	color: var(--color-white);
 	padding: 8px 16px;
 }
 
 .accordionText {
-	color: var(--color-black);
+	color: var(--color-white);
+	background-color: var(--color-black);
 	font-family: Poppins;
 	font-size: 20px;
 	font-style: normal;

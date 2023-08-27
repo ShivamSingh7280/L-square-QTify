@@ -29,19 +29,19 @@ const FilterTabs = ({ data, loadingState }) => {
 	};
 
 	return (
-		<div>
+		<div className={styles.filterSectionWrapper}>
 			<Box sx={{ width: "100%" }}>
 				<Box sx={{ borderBottom: 1, borderColor: "divider" }}>
 					<Tabs value={value} onChange={_handleTabs} aria-label="basic tabs">
 						{allSongsTabs.map((each) => (
-							<Tab label={each} key={each} />
+							<Tab label={each} key={each} sx={{ color: "white" }} />
 						))}
 					</Tabs>
 				</Box>
 
 				{allSongsTabs.map((_, index) => (
 					<TabPanel key={index} value={value} index={index}>
-						<div className={styles.filterSectionWrapper}>
+						<div>
 							<Section
 								data={filteredData(index)}
 								type="songs"

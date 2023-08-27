@@ -1,5 +1,5 @@
 .sectionWrapper {
-	padding: 0px 30px 60px;
+	padding: 0px 30px 30px;
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
@@ -23,9 +23,15 @@
 	flex-shrink: 0;
 }
 
+hr.line {
+	border: 1px solid var(--color-primary);
+	border-radius: 5px;
+}
+
 .accordionHeader {
 	margin: 15px;
 	color: var(--color-white);
+
 	text-align: center;
 	font-family: Poppins;
 	font-size: 50px;

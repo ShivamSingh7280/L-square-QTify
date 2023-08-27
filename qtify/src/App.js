@@ -8,6 +8,7 @@ import Section from "./components/Section/Section";
 import styles from "./App.module.css";
 import FilterTabs from "./components/FilterTabs/FilterTabs";
 import CustomAccordion from "./components/Accordion/CustomAccordion";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
 	const [topAlbumData, setTopAlbumData] = useState([]);
@@ -29,7 +30,6 @@ function App() {
 
 			const data = await fetchTopAlbums();
 			setTopAlbumData(data);
-
 			_manageLoadingState("topAlbum", false);
 		} catch (error) {
 			_manageLoadingState("topAlbum", false);
@@ -89,12 +89,14 @@ function App() {
 					loadingState={loadingState.newAlbum}
 				/>
 			</div>
-			<hr></hr>
+			<hr className={styles.line}></hr>
 			<div>
 				<h3 className={styles.tabsTitle}>Songs</h3>
 			</div>
 			<FilterTabs data={allSongsData} loadingState={loadingState.allSongs} />
-			<hr></hr>
+
+			<hr className={styles.line}></hr>
+
 			<div className={styles.customAccordionWrapper}>
 				<h1 className={styles.accordionHeader}>FAQs</h1>
 				<CustomAccordion />
