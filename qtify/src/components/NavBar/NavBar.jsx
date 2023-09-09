@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Logo from "../Logo/Logo";
 import styles from "./NavBar.module.css";
 import SearchBar from "../SearchBar/SearchBar";
-import Button from "../Button/Button";
 import FeedBackModal from "../Modals/FeedBackModal/FeedBackModal";
 import { showToast } from "../../config/helper-methods";
 
@@ -19,21 +18,23 @@ const NavBar = ({ data }) => {
 	};
 
 	return (
-		<>
+		<div className={styles.wrapper}>
 			<nav className={styles.navbar}>
-				<Logo />
+				<Logo className={styles.logo} />
 				<SearchBar placeholder="Search a album of your choice" data={data} />
-				<Button
-					btnText="Give Feedback"
-					onClickHandler={() => _toggleFeedBackModal(true)}
-				/>
+
+				<div
+					className={styles.nav_link}
+					onClick={() => _toggleFeedBackModal(true)}>
+					Give Feedback
+				</div>
 			</nav>
 			<FeedBackModal
 				isOpen={isFeedBackModalOpen}
 				onSuccess={_onSuccess}
 				onDismiss={_toggleFeedBackModal}
 			/>
-		</>
+		</div>
 	);
 };
 

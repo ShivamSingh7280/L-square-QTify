@@ -42,7 +42,7 @@ const SearchBar = (props) => {
 							onChange={(e) => setInputValue(e.target.value)}
 						/>
 						<button className={styles.searchButton} type="submit">
-							<SearchIcon />
+							<SearchIcon className={styles.searchIcon} />
 						</button>
 					</form>
 				</div>
@@ -52,7 +52,9 @@ const SearchBar = (props) => {
 						{filteredOptions?.length ? (
 							<Menu albums={filteredOptions} />
 						) : inputValue ? (
-							<p>No Data Found</p>
+							<div className={styles.not_found_wrapper}>
+								<p className={styles.not_found_message}>No Data Found</p>
+							</div>
 						) : null}
 					</div>
 				)}

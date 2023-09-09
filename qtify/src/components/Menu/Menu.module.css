@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 .wrapper {
+	font-family: "Poppins", sans-serif;
 	min-height: auto;
-	width: 563px;
+	width: 30vw;
 	max-height: 280px;
 	overflow: hidden;
 	overflow-y: scroll;
@@ -11,6 +14,7 @@
 	margin-left: 14px;
 	margin-bottom: none;
 	margin-top: none;
+	overflow-x: auto;
 }
 
 .menuItemWrapper {
@@ -19,10 +23,9 @@
 	background: #1a1a1a;
 }
 
-@media (max-width: 480) {
+@media only screen and (max-width: 576) {
 	.wrapper {
-		width: 250px;
-		overflow-x: scroll;
+		overflow-y: scroll;
 		flex-shrink: 0;
 		border: 1px solid #34c94b;
 		border-bottom-left-radius: 8px;

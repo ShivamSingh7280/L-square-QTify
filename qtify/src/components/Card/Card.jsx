@@ -7,11 +7,7 @@ const Card = ({ data, type }) => {
 		switch (type) {
 			case "album":
 				return (
-					<Tooltip
-						title={`${data.songs.length} songs`}
-						className={styles.tooltip}
-						placement="top"
-						arrow>
+					<Tooltip title={`${data.songs.length} songs`} placement="top" arrow>
 						<div className={styles.wrapper}>
 							<div className={styles.card}>
 								<img src={data.image} alt="album" />
@@ -36,7 +32,7 @@ const Card = ({ data, type }) => {
 						<div className={styles.card}>
 							<img src={data.image} alt="song" loading="lazy" />
 							<div className={styles.banner}>
-								<div className={styles.pill}>
+								<div id={styles.pill}>
 									<p>{data.likes} Likes</p>
 								</div>
 							</div>

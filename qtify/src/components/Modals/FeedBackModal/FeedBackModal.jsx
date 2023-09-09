@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import styles from "./FeedBackModal.module.css";
-import Button from "../../Button/Button";
 import { ReactComponent as CrossBtn } from "../../../assets/crossBtn.svg";
 import { errorHandler } from "../../../config/helper-methods";
 
@@ -107,7 +106,6 @@ const FeedBackModal = ({ isOpen, onSuccess, onDismiss }) => {
 						<textarea
 							className={styles.description}
 							placeholder="Description"
-							// type="textarea"
 							value={description}
 							name="description"
 							onChange={(e) => {
@@ -116,8 +114,10 @@ const FeedBackModal = ({ isOpen, onSuccess, onDismiss }) => {
 						/>
 					</div>
 
-					<div className={styles.btnContainer}>
-						<Button btnText="Submit Feedback" onClickHandler={_handleSubmit} />
+					<div>
+						<div onClickHandler={_handleSubmit} className={styles.btnContainer}>
+							Submit Feedback
+						</div>
 					</div>
 				</Box>
 			</Modal>

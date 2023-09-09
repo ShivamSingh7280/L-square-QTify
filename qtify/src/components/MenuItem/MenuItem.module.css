@@ -23,10 +23,10 @@
 	overflow: hidden;
 }
 
-.imgTextWrapper h5 {
+.imgTextWrapper h4 {
 	color: var(--color-white);
 	font-family: Poppins;
-	font-size: 16px;
+	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
@@ -49,4 +49,14 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
+}
+
+@media only screen and (max-width: 912px) {
+	.followWrapper {
+		display: none;
+	}
+
+	.thumbnailWrapper {
+		display: none;
+	}
 }

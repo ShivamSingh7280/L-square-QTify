@@ -1,8 +1,3 @@
-.filterSectionWrapper {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	justify-content: space-between;
-	margin-bottom: 35px;
-	padding-bottom: 10px;
+#tabs_wrapper {
+	margin-bottom: 25px;
 }

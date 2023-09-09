@@ -34,7 +34,11 @@ const FilterTabs = ({ data, loadingState }) => {
 		<div className={styles.filterSectionWrapper}>
 			<Box sx={{ width: "100%" }}>
 				<Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-					<Tabs value={value} onChange={_handleTabs} aria-label="basic tabs">
+					<Tabs
+						value={value}
+						onChange={_handleTabs}
+						aria-label="basic tabs"
+						id={styles.tabs_wrapper}>
 						{allSongsTabs.map((each) => (
 							<Tab label={each} key={each} sx={{ color: "white" }} />
 						))}
@@ -47,7 +51,7 @@ const FilterTabs = ({ data, loadingState }) => {
 							<Section
 								data={filteredData(index)}
 								type="songs"
-								header={index ? "filterAll" : "all"}
+								header={"filterAll"}
 								loadingState={loadingState}
 							/>
 						</div>
