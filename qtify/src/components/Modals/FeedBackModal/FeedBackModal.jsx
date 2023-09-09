@@ -115,7 +115,7 @@ const FeedBackModal = ({ isOpen, onSuccess, onDismiss }) => {
 					</div>
 
 					<div>
-						<div onClickHandler={_handleSubmit} className={styles.btnContainer}>
+						<div onClick={_handleSubmit} className={styles.btnContainer}>
 							Submit Feedback
 						</div>
 					</div>
