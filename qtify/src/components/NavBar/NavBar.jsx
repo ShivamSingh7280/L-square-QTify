@@ -26,7 +26,7 @@ const NavBar = ({ data }) => {
 				<div
 					className={styles.nav_link}
 					onClick={() => _toggleFeedBackModal(true)}>
-					Give Feedback
+					Feedback
 				</div>
 			</nav>
 			<FeedBackModal
