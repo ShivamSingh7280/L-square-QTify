@@ -5,7 +5,6 @@ export const showToast = (message, type = "error", duration = 4000) => {
 };
 
 export const errorHandler = (error) => {
-	console.log("error>>", error);
 	showToast(
 		error?.reason?.length
 			? error?.reason
@@ -29,12 +28,6 @@ export function convertMsToTime(ms) {
 	seconds = seconds % 60;
 	minutes = minutes % 60;
 	hours = hours % 24;
-
-	console.log("hrs", hours);
-
-	console.log(
-		`${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`
-	);
 
 	if (!hours) {
 		return `${padTo2Digits(minutes)} min ${padTo2Digits(seconds)} sec`;

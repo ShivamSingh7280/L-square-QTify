@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const MenuItem = ({ item }) => {
 	const navigate = useNavigate();
-	console.log("item", item);
+
 	return (
 		<>
 			<div

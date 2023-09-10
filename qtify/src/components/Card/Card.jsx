@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Card = ({ data, type }) => {
 	const navigate = useNavigate();
-	console.log("dataaaaa", data);
+
 	const getCard = (type) => {
 		switch (type) {
 			case "album":
@@ -33,9 +33,7 @@ const Card = ({ data, type }) => {
 
 			case "songs":
 				return (
-					<div
-						className={styles.wrapper}
-						onClick={() => navigate(`/album/${data?.slug}`)}>
+					<div className={styles.wrapper}>
 						<div className={styles.card}>
 							<img src={data.image} alt="song" loading="lazy" />
 							<div className={styles.banner}>

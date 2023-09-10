@@ -9,6 +9,10 @@
 	cursor: pointer;
 }
 
+.logoWrapper {
+	cursor: pointer;
+}
+
 .navbar {
 	width: 90vw;
 	margin: auto auto;
