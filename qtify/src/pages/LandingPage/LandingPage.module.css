@@ -61,3 +61,15 @@ hr.line {
 	font-weight: 600;
 	line-height: normal;
 }
+
+@media only screen and (min-width: 913px) {
+	.landingPageSearchWrapper {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 913px) {
+	.landingPageSearchWrapper {
+		width: 100%;
+	}
+}

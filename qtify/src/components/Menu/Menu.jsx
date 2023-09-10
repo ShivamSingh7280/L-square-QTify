@@ -9,12 +9,7 @@ const Menu = ({ albums }) => {
 				{albums?.length
 					? albums.map((item) => (
 							<div className={styles.menuItemWrapper} key={item.id}>
-								<MenuItem
-									image={item.image}
-									albumName={item.title}
-									follows={item.follows}
-									key={item.id}
-								/>
+								<MenuItem item={item} />
 							</div>
 					  ))
 					: null}

@@ -1,34 +1,22 @@
 import React, { useEffect } from "react";
-import NavBar from "../NavBar/NavBar";
-import HeroSection from "../HeroSection/HeroSection";
 import {
 	fetchTopAlbums,
 	fetchNewAlbums,
 	fetchAllSongs,
 } from "../../api/api.js";
 import { useState } from "react";
-import Section from "../Section/Section";
 import styles from "./LandingPage.module.css";
-import FilterTabs from "../FilterTabs/FilterTabs";
-import CustomAccordion from "../Accordion/CustomAccordion";
 import { Toaster } from "react-hot-toast";
 import { errorHandler } from "../../config/helper-methods";
+import { accordionData } from "../../config/helper-config";
+import HeroSection from "../../components/HeroSection/HeroSection.jsx";
+import NavBar from "../../components/NavBar/NavBar.jsx";
+import Section from "../../components/Section/Section.jsx";
+import FilterTabs from "../../components/FilterTabs/FilterTabs.jsx";
+import CustomAccordion from "../../components/Accordion/CustomAccordion.jsx";
+import SearchBar from "../../components/SearchBar/SearchBar.jsx";
 
 //Accordion Data.(Sending as a props).
-
-const accordionData = [
-	{
-		id: 1,
-		question: "Is QTify free to use?",
-		answer: "Yes! It is 100% free, and it has 0% ads!",
-	},
-	{
-		id: 1,
-		question: "Can I download and listen to songs offline?",
-		answer:
-			"	Sorry, unfortunately we don't provide service to download any songs.",
-	},
-];
 
 function LandingPage() {
 	const [topAlbumData, setTopAlbumData] = useState([]);
@@ -97,6 +85,13 @@ function LandingPage() {
 		<>
 			<Toaster position="bottom-right" reverseOrder={false} />
 			<NavBar data={dropdownData} />
+
+			<div className={styles.landingPageSearchWrapper}>
+				<SearchBar
+					placeholder="Search a album of your choice"
+					data={dropdownData}
+				/>
+			</div>
 
 			<HeroSection />
 			<div className={styles.sectionWrapper}>

@@ -13,7 +13,7 @@
 	margin: auto auto;
 	height: 4.9333rem;
 	display: flex;
-	padding: 0 2rem;
+	padding: 0;
 	align-items: center;
 	justify-content: space-between;
 }
@@ -43,7 +43,7 @@
 	}
 }
 
-@media only screen and (max-width: 913) {
+@media only screen and (max-width: 913px) {
 	.navbar {
 		padding: 20px;
 	}
@@ -51,5 +51,9 @@
 	.nav_link {
 		font-size: 16px;
 		padding: 10px 20px;
+	}
+
+	.wrapper .navbar .searchWrapper {
+		display: none;
 	}
 }

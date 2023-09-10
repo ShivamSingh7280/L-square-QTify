@@ -32,15 +32,6 @@
 	line-height: normal;
 }
 
-.textWrapper p {
-	color: #d8d8d8;
-	font-family: Poppins;
-	font-size: 12px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-}
-
 .followWrapper h5 {
 	color: var(--color-white);
 	text-align: right;
@@ -51,12 +42,14 @@
 	line-height: normal;
 }
 
-@media only screen and (max-width: 912px) {
-	.followWrapper {
-		display: none;
-	}
-
-	.thumbnailWrapper {
-		display: none;
+@media only screen and (max-width: 576px) {
+	.imgTextWrapper h4 {
+		color: var(--color-white);
+		font-family: Poppins;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: normal;
+		border: none;
 	}
 }

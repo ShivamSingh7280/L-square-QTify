@@ -21,7 +21,10 @@ const NavBar = ({ data }) => {
 		<div className={styles.wrapper}>
 			<nav className={styles.navbar}>
 				<Logo className={styles.logo} />
-				<SearchBar placeholder="Search a album of your choice" data={data} />
+
+				<div className={styles.searchWrapper}>
+					<SearchBar placeholder="Search a album of your choice" data={data} />
+				</div>
 
 				<div
 					className={styles.nav_link}

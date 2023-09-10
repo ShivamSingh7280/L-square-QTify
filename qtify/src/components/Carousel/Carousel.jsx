@@ -9,10 +9,11 @@ import CarouselRightNavigation from "./CarouselRightNavigation/CarouselRightNavi
 import { useEffect } from "react";
 
 const Controls = ({ data }) => {
-	const swiper = useSwiper();
+	const { swiper } = useSwiper();
 
 	useEffect(() => {
-		swiper.slideTo(0);
+		swiper?.slideTo(0);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [data]);
 
 	return <></>;
@@ -30,8 +31,8 @@ const Carousel = ({ data, renderCardComponent }) => {
 				<Controls data={data} />
 				<CarouselLeftNavigation />
 				<CarouselRightNavigation />
-				{data.map((item) => (
-					<SwiperSlide key={item.id}>{renderCardComponent(item)}</SwiperSlide>
+				{data?.map((item) => (
+					<SwiperSlide key={item?.id}>{renderCardComponent(item)}</SwiperSlide>
 				))}
 			</Swiper>
 		</div>

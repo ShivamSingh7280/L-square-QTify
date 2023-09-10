@@ -3,22 +3,21 @@
 .wrapper {
 	font-family: "Poppins", sans-serif;
 	min-height: auto;
-	width: 30vw;
+	width: 100vw;
 	max-height: 280px;
 	overflow: hidden;
 	overflow-y: scroll;
-	flex-shrink: 0;
 	border: 1px solid #34c94b;
 	border-bottom-left-radius: 8px;
 	background: #121212;
-	margin-left: 25px;
 	margin-bottom: none;
 	margin-top: none;
 	overflow-x: auto;
 }
 
 .menuItemWrapper {
-	width: 100%;
+	width: 99.5%;
+	border: 1px solid var(--color-primary);
 	flex-shrink: 0;
 	background: #1a1a1a;
 }
@@ -27,7 +26,6 @@
 	.wrapper {
 		overflow-y: scroll;
 		flex-shrink: 0;
-		border: 1px solid #34c94b;
 		border-bottom-left-radius: 8px;
 		background: #121212;
 		margin-left: 10px;

@@ -18,8 +18,8 @@ const SearchBar = (props) => {
 			return;
 		}
 
-		const filteredOptions = data.filter((albumsData) =>
-			albumsData.title.toLowerCase().includes(inputValue.toLowerCase())
+		const filteredOptions = data?.filter((albumsData) =>
+			albumsData?.title?.toLowerCase()?.includes(inputValue.toLowerCase())
 		);
 
 		setFilteredOptions(filteredOptions);
@@ -31,35 +31,33 @@ const SearchBar = (props) => {
 	}, [inputValue]);
 
 	return (
-		<>
-			<div>
-				<div onClick={() => setIsComponentVisible(true)}>
-					<form className={styles.wrapper}>
-						<input
-							className={styles.search}
-							placeholder={placeholder}
-							value={inputValue}
-							onChange={(e) => setInputValue(e.target.value)}
-						/>
-						<button className={styles.searchButton} type="submit">
-							<SearchIcon className={styles.searchIcon} />
-						</button>
-					</form>
-				</div>
-
-				{isComponentVisible && (
-					<div className={styles.dropdownWrapper} ref={ref}>
-						{filteredOptions?.length ? (
-							<Menu albums={filteredOptions} />
-						) : inputValue ? (
-							<div className={styles.not_found_wrapper}>
-								<p className={styles.not_found_message}>No Data Found</p>
-							</div>
-						) : null}
-					</div>
-				)}
+		<div>
+			<div onClick={() => setIsComponentVisible(true)}>
+				<form className={styles.wrapper}>
+					<input
+						className={styles.search}
+						placeholder={placeholder}
+						value={inputValue}
+						onChange={(e) => setInputValue(e.target.value)}
+					/>
+					<button className={styles.searchButton} type="submit">
+						<SearchIcon className={styles.searchIcon} />
+					</button>
+				</form>
 			</div>
-		</>
+
+			{isComponentVisible && (
+				<div className={styles.dropdownWrapper} ref={ref}>
+					{filteredOptions?.length ? (
+						<Menu albums={filteredOptions} />
+					) : inputValue ? (
+						<div className={styles.not_found_wrapper}>
+							<p className={styles.not_found_message}>No Data Found</p>
+						</div>
+					) : null}
+				</div>
+			)}
+		</div>
 	);
 };
 
