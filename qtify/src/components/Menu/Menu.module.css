@@ -2,9 +2,10 @@
 
 .wrapper {
 	font-family: "Poppins", sans-serif;
-	min-height: auto;
-	width: 100vw;
+	width: 30vw;
+	position: absolute;
 	max-height: 280px;
+	margin-left: 25px;
 	overflow: hidden;
 	overflow-y: scroll;
 	border: 1px solid #34c94b;
@@ -22,13 +23,13 @@
 	background: #1a1a1a;
 }
 
-@media only screen and (max-width: 576) {
+@media only screen and (max-width: 913px) {
 	.wrapper {
+		width: 100vw;
 		overflow-y: scroll;
-		flex-shrink: 0;
 		border-bottom-left-radius: 8px;
 		background: #121212;
-		margin-left: 10px;
+		margin-left: 0px;
 		margin-bottom: none;
 		margin-top: none;
 	}

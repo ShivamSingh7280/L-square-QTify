@@ -5,7 +5,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import FeedBackModal from "../Modals/FeedBackModal/FeedBackModal";
 import { showToast } from "../../config/helper-methods";
 
-const NavBar = ({ data }) => {
+const NavBar = ({ data, logo = false, search = false, feedback = false }) => {
 	const [isFeedBackModalOpen, setIsFeedBackModalOpen] = useState(false);
 
 	const _toggleFeedBackModal = (value = false) => {
@@ -20,17 +20,24 @@ const NavBar = ({ data }) => {
 	return (
 		<div className={styles.wrapper}>
 			<nav className={styles.navbar}>
-				<Logo className={styles.logo} />
+				{logo ? <Logo id={styles.logo} /> : null}
 
-				<div className={styles.searchWrapper}>
-					<SearchBar placeholder="Search a album of your choice" data={data} />
-				</div>
+				{search ? (
+					<div className={styles.searchWrapper}>
+						<SearchBar
+							placeholder="Search a album of your choice"
+							data={data}
+						/>
+					</div>
+				) : null}
 
-				<div
-					className={styles.nav_link}
-					onClick={() => _toggleFeedBackModal(true)}>
-					Feedback
-				</div>
+				{feedback ? (
+					<div
+						className={styles.nav_link}
+						onClick={() => _toggleFeedBackModal(true)}>
+						Feedback
+					</div>
+				) : null}
 			</nav>
 			<FeedBackModal
 				isOpen={isFeedBackModalOpen}

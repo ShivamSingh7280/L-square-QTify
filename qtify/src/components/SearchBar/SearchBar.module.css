@@ -35,9 +35,10 @@
 }
 
 .not_found_wrapper {
+	position: absolute;
 	background-color: var(--color-black);
 	width: 30vw;
-	margin-left: 16px;
+	margin-left: 25px;
 	border-radius: 10px;
 	margin-top: 20px;
 	border: 2px solid var(--color-primary);
@@ -71,5 +72,10 @@
 
 	.search {
 		border-radius: 0px;
+	}
+
+	.not_found_wrapper {
+		width: 90vw;
+		margin-left: 15px;
 	}
 }

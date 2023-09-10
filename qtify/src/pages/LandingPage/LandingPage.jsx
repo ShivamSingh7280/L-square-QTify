@@ -15,6 +15,7 @@ import Section from "../../components/Section/Section.jsx";
 import FilterTabs from "../../components/FilterTabs/FilterTabs.jsx";
 import CustomAccordion from "../../components/Accordion/CustomAccordion.jsx";
 import SearchBar from "../../components/SearchBar/SearchBar.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
 //Accordion Data.(Sending as a props).
 
@@ -84,7 +85,7 @@ function LandingPage() {
 	return (
 		<>
 			<Toaster position="bottom-right" reverseOrder={false} />
-			<NavBar data={dropdownData} />
+			<NavBar data={dropdownData} logo={true} search={true} feedback={true} />
 
 			<div className={styles.landingPageSearchWrapper}>
 				<SearchBar
@@ -128,6 +129,7 @@ function LandingPage() {
 					<></>
 				)}
 			</div>
+			<Footer />
 		</>
 	);
 }
